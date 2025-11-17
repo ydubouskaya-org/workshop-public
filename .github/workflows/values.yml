@@ -25,6 +25,8 @@ jobs:
   producer:
     needs: pass_in_one_job
     runs-on: ubuntu-latest
+    outputs:
+        message: ${{ steps.sentence_maker.outputs.message }}
     steps:
       - name: Make a sentence
         id: sentence_maker
