@@ -17,7 +17,7 @@ on:
         required: true
         type: environment
       matrix:
-        description: 'Tags for the run'
+        description: 'Matrix for the run'
         required: true
         type: string
 
@@ -25,7 +25,7 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJSON(INPUT_VALUE) }}
+      matrix: ${{ fromJSON(matrix) }}
     steps:
       - name: Print the inputs
         run: |
