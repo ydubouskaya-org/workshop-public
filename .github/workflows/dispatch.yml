@@ -18,7 +18,7 @@ on:
         type: environment
       matrix:
         description: 'Tags for the run'
-        required: false
+        required: true
         type: string
 
 jobs:
