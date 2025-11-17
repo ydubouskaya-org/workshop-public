@@ -15,12 +15,11 @@ on:
       matrix:
         description: 'Tags for the run'
         required: false
-        default: '${{ fromJSON(INPUT_VALUE) }}'
         type: string
 
 jobs:
   log-the-inputs:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         version: [ 20, 22, 24 ]
