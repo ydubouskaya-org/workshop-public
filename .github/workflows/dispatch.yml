@@ -12,10 +12,19 @@ on:
           - info
           - warning
           - debug
+      matrix:
+        description: 'Tags for the run'
+        required: false
+        default: '${{ fromJSON(INPUT_VALUE) }}'
+        type: string
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ 20, 22, 24 ]
+        os: [ ubuntu-latest, windows-latest ]
     steps:
       - name: Print the inputs
         run: |
