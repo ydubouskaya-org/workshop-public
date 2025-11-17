@@ -68,5 +68,5 @@ jobs:
           name: file
       - shell: bash
         run: |
-          value=`cat <ARTIFACT_FILE_NAME>`
+          value=`cat file.txt`
           echo $(expr $value \* 9)
